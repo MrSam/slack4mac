@@ -11,6 +11,8 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+import slack4mac.windows.ButtonClickListener;
+
 public class LoginScreen {
 
     private JFrame frame;

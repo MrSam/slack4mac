@@ -1,4 +1,4 @@
-package slack4mac;
+package slack4mac.windows;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

@@ -7,6 +7,8 @@ import java.net.URL;
 
 import javax.swing.JTextField;
 
+import org.json.JSONObject;
+
 
 public class SlackAPI {
 
@@ -33,6 +35,21 @@ public class SlackAPI {
 
     public static void authTest(String token) {
         // https://api.slack.com/methods/auth.test
+        
+        try {
+            String response = null;
+            response = SlackAPI.getMethod("auth.test?token=" + token);
+            if(response != null) {
+                //JSONObject obj = new JSONObject(response);
+                System.out.println(response);
+                /*
+                 * {"ok":false,"error":"invalid_auth"}
+                 */
+            }
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
 
 }

@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-public class loginscreen {
+public class LoginScreen {
 
     private JFrame frame;
     private JLabel lblLogin,lblPassword;
@@ -29,7 +29,7 @@ public class loginscreen {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    loginscreen window = new loginscreen();
+                    LoginScreen window = new LoginScreen();
                     window.frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -41,7 +41,7 @@ public class loginscreen {
     /**
      * Create the application.
      */
-    public loginscreen() {
+    public LoginScreen() {
         initialize();
     }
 
@@ -51,8 +51,6 @@ public class loginscreen {
     private void initialize() {
         frame = new JFrame();
         
-        
-
         lblLogin=new JLabel("Login :");
         lblPassword=new JLabel("Password :");
 
@@ -60,6 +58,7 @@ public class loginscreen {
         txtPassword=new JPasswordField(40);
 
         btnSubmit=new JButton("Login");
+        btnSubmit.addActionListener(new ButtonClickListener()); 
 
         p1=new JPanel();
         p2=new JPanel();

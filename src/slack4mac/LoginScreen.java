@@ -8,7 +8,6 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import slack4mac.windows.ButtonClickListener;
@@ -16,9 +15,8 @@ import slack4mac.windows.ButtonClickListener;
 public class LoginScreen {
 
     private JFrame frame;
-    private JLabel lblLogin,lblPassword;
-    private JTextField txtLogin;
-    private JPasswordField txtPassword;
+    private JLabel lblLogin;
+    public static JTextField txtToken;
     private JButton btnSubmit;
     private JPanel p1,p2;
     private GridLayout gl42,gl21;
@@ -53,13 +51,11 @@ public class LoginScreen {
     private void initialize() {
         frame = new JFrame();
         
-        lblLogin=new JLabel("Login :");
-        lblPassword=new JLabel("Password :");
+        lblLogin=new JLabel("Your Slack Token :");
 
-        txtLogin=new JTextField(40);
-        txtPassword=new JPasswordField(40);
+        txtToken=new JTextField(40);
 
-        btnSubmit=new JButton("Login");
+        btnSubmit=new JButton("Connect");
         btnSubmit.addActionListener(new ButtonClickListener()); 
 
         p1=new JPanel();
@@ -71,9 +67,7 @@ public class LoginScreen {
 
         p1.setLayout(gl42);
         p1.add(lblLogin);
-        p1.add(txtLogin);
-        p1.add(lblPassword);
-        p1.add(txtPassword);
+        p1.add(txtToken);
 
         p2.setLayout(fl);
         p2.add(btnSubmit);
